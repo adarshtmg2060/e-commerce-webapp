@@ -11,6 +11,7 @@ services:
     volumes:
       - ./server:/app
       - /app/node_modules  # Prevents host node_modules from overwriting container's
+      - /app/node_modules/.prisma  # Add this to persist Prisma client
     env_file:
       - ./server/.env
     command: ["npm","run","dev","--legacy-watch"]

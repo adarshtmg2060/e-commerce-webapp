@@ -1,15 +1,15 @@
 import express from 'express';
-
+import userRoute from './modules/users/user.route'
 const app=express();
+
 
 app.get('/',(req,res)=>{
     res.send('hello world from servers');
 });
 
-app.get('/about',(req,res)=>{
-    res.send('about pages');
-})
+app.use('/user',userRoute)
 
+ 
 
  
 
